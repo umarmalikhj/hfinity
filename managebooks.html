@@ -26,42 +26,42 @@
                             <th>Total Copies Available</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody id="booksTableBody">
+                          <tr>
                             <td>B001</td>
                             <td>The Great Gatsby</td>
-                            <td>Classic</td>
+                            <td>Fiction</td>
                             <td>F. Scott Fitzgerald</td>
-                            <td>5</td>
-                            </tr>
-                            <tr>
+                            <td>12</td>
+                          </tr>
+                          <tr>
                             <td>B002</td>
-                            <td>To Kill a Mockingbird</td>
-                            <td>Fiction</td>
-                            <td>Harper Lee</td>
-                            <td>3</td>
-                            </tr>
-                            <tr>
+                            <td>A Brief History of Time</td>
+                            <td>Science</td>
+                            <td>Stephen Hawking</td>
+                            <td>7</td>
+                          </tr>
+                          <tr>
                             <td>B003</td>
-                            <td>Ponniyin Selvan</td>
-                            <td>Historical</td>
-                            <td>Kalki Krishnamurthy</td>
-                            <td>4</td>
-                            </tr>
-                            <tr>
+                            <td>Steve Jobs</td>
+                            <td>Biography</td>
+                            <td>Walter Isaacson</td>
+                            <td>5</td>
+                          </tr>
+                          <tr>
                             <td>B004</td>
-                            <td>The Odyssey</td>
-                            <td>Epic</td>
-                            <td>Homer</td>
-                            <td>2</td>
-                            </tr>
-                            <tr>
+                            <td>1984</td>
+                            <td>Classic</td>
+                            <td>George Orwell</td>
+                            <td>8</td>
+                          </tr>
+                          <tr>
                             <td>B005</td>
-                            <td>The Catcher in the Rye</td>
+                            <td>The Alchemist</td>
                             <td>Fiction</td>
-                            <td>J.D. Salinger</td>
-                            <td>6</td>
-                            </tr>
+                            <td>Paulo Coelho</td>
+                            <td>10</td>
+                          </tr>
                         </tbody>
                     </table>
                 </div>
@@ -80,6 +80,43 @@
       .then(data => {
         document.getElementById('sidebar').innerHTML = data;
       });
+    
+    document.getElementById('addBookForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const bookTitle = document.getElementById('bookTitle').value.trim();
+    const author = document.getElementById('author').value.trim();
+    const category = document.getElementById('category').value;
+    const language = document.getElementById('language').value;
+    const availableCopies = document.getElementById('availableCopies').value;
+    const totalCopies = document.getElementById('totalCopies').value;
+    const status = document.querySelector('input[name="status"]:checked').value;
+    const features = document.getElementById('features').value;
+
+    // Create a book object
+    const newBook = {
+      title: bookTitle,
+      author: author,
+      category: category,
+      language: language,
+      availableCopies: availableCopies,
+      totalCopies: totalCopies,
+      status: status,
+      features: features,
+    };
+
+    const books = JSON.parse(localStorage.getItem('books')) || [];
+
+    // Add the new book to array
+    books.push(newBook);
+
+    // Save back to localStorage
+    localStorage.setItem('books', JSON.stringify(books));
+
+    // Redirect to manage books page
+    window.location.href = 'managebooks.html';
+  });
+
   </script>
 </body>
 </html>

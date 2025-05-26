@@ -67,11 +67,6 @@ label {
     color: var(--label-color);
 }
 
-.required::after {
-    content: " *";
-    color: red;
-}
-
 input[type="text"],
 input[type="number"],
 input[type="file"],
