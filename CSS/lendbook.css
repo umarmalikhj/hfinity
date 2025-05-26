@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-font: "Inter", sans-serif;
+    --head-font: "Poppins", sans-serif;
+    --dark-bg: #0d1117;
+    --primary-dark: #0090cc;
+    --accent-color: #00e0ff;
+    --primary-color: #00b7ff;
+    --primary-text: #333;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+.container {
+    margin: 90px 20px 0 280px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: var(--dark-bg);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row > .form-group {
+    flex: 1;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.cancel {
+    background-color: #ccc;
+}
+
+.submit {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cancel:hover{
+    background-color: rgb(173, 173, 173);
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover{
+    background-color: var(--accent-color);
+    transition: background-color 0.3s ease;
+}

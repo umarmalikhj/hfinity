@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/lendingbook.css">
+    <title>Lended Books</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="maincont">
+        <div id="sidebar"></div>
+        <div class="content">
+            <div class="lend-head">
+                <h1>Lending Records</h1>
+                <a href="./lendbook.html">Lend A New Book</a>
+            </div>
+            <div class="lend-cont">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone No</th>
+                            <th>No. of Books Taken</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>U001</td>
+                            <td>John Doe</td>
+                            <td>john.doe@example.com</td>
+                            <td>+91-9999999991</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>U002</td>
+                            <td>Jane Smith</td>
+                            <td>jane.smith@example.com</td>
+                            <td>+91-9999999992</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>U003</td>
+                            <td>Alice Johnson</td>
+                            <td>alice.johnson@example.com</td>
+                            <td>+91-9999999993</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>U004</td>
+                            <td>Bob Brown</td>
+                            <td>bob.brown@example.com</td>
+                            <td>+91-9999999994</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>U005</td>
+                            <td>Will Turner</td>
+                            <td>willturner@example.com</td>
+                            <td>+91-9999999995</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data=> {
+                document.getElementById('sidebar').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

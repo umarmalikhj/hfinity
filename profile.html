@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="./CSS/profile.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="maincont">
+        <div id="sidebar"></div>
+        <div class="content">
+            <div class="lend-head">
+                <h1>Admin Profile</h1>
+            </div>
+
+            <div class="profile-page">
+                <div class="img">
+                    <img src="./Assets/Untitled design.png" alt="Admin Photo" class="profile-pic">
+                </div>
+                <div class="profile-details">
+                    <p><strong>Full Name:</strong> Mohammed Umar Malik</p>
+                    <p><strong>Email:</strong> umxxxxxxj@gxxxxx.com</p>
+                    <p><strong>Role:</strong> Administrator</p>
+                    <p><strong>Phone:</strong> +91-98XXX XXX87</p>
+                    <p><strong>Joined:</strong> January 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

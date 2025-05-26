@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-font: "Inter", sans-serif;
+    --head-font: "Poppins", sans-serif;
+    --dark-bg: #0d1117;
+    --primary-dark: #0090cc;
+    --accent-color: #00e0ff;
+    --primary-color: #00b7ff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+.navbar{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2.5em 1em 1em;
+    top: 0;
+    height: 75px;
+    width: 100vw;
+    background: var(--dark-bg);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hamburger-btn {
+    background: rgba(13, 17, 23, 0.6);
+    backdrop-filter: blur(8px);
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s ease;
+    color: var(--primary-color);
+}
+
+.hamburger-icon {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+  transition: stroke 0.3s ease;
+}
+
+.hamburger-btn:hover .hamburger-icon {
+  stroke: var(--accent-color);
+  filter: drop-shadow(0 0 6px var(--accent-color));
+}
+
+.hamburger-btn:focus,
+.icn:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.logo span {
+    font-family:var(--head-font);
+    display: inline-block;
+    color: white;
+    animation: neonGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes neonGlow {
+    0%, 100% { 
+        text-shadow: none; 
+    }
+    50% { 
+        text-shadow: 0 0 8px #00bfff, 0 0 16px #00bfff, 0 0 32px #00bfff; 
+    }
+}
+
+.logo span:nth-child(1) { 
+    animation-delay: 0s; 
+}
+.logo span:nth-child(2) { 
+    animation-delay: 0.3s; 
+}
+.logo span:nth-child(3) { 
+    animation-delay: 0.6s; 
+}
+.logo span:nth-child(4) { 
+    animation-delay: 0.9s;
+}
+.logo span:nth-child(5) { 
+    animation-delay: 1.2s; 
+}
+.logo span:nth-child(6) { 
+    animation-delay: 1.5s; 
+}
+.logo span:nth-child(7) { 
+    animation-delay: 1.8s; 
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1a1f25; 
+    border-radius: 25px;
+    padding: 0 0.6rem;
+    border: 1.5px solid var(--dark-bg);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    height: 36px;
+}
+
+
+.search-bar:focus-within {
+    box-shadow: 
+        0 0 8px #00bfff88, 
+        0 0 16px #00e0ff55, 
+        0 0 32px #00bfff33;
+}
+
+.search-bar input {
+    width: 16rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    font-size: 0.85rem;
+    background-color: transparent;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.search-icon {
+    padding-left: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transition: transform 0.2s ease;
+}
+
+.search-icon svg {
+    height: 18px;
+    width: 18px;
+}
+
+.search-bar:hover .search-icon svg {
+    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+.icons, .search-bar {
+    height: 36px; 
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 16px; 
+    justify-content: flex-end;
+}
+
+.icn{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    transform-origin: center;
+}
+
+.icn svg{
+    height: 23px;
+    width: 23px;
+    transform: scaleX(0.9);
+}
+
+.icn:hover {
+    box-shadow: 
+        0 0 4px #00bfff88, 
+        0 0 8px #00bfff66, 
+        0 0 16px #00bfff44, 
+        0 0 32px #00bfff33;
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+@media (max-width: 850px) {
+  .search-bar {
+    display: none;
+  }
+  .icons {
+    gap: 10px;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .navbar{
+    padding: 1em 1em 1em 1em;;
+  }
+}
+
+@media (max-width: 450px) {
+    .dis{
+        display: none;
+    }
+    .navbar{
+        padding: 0.75em;
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/lendingbook.css">
+    <title>Notifications</title>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="maincont">
+        <div id="sidebar"></div>
+        <div class="content">
+            <div class="lend-head">
+                <h1>Notifications</h1>
+            </div>
+            <div class="notification-cont">
+                <p class="no-notifications">&nbsp;No new notifications at the moment.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="./CSS/lendingbook.css" />
+  <title>Book Inventory</title>
+</head>
+<body>
+    <div id="navbar"></div>
+        <div class="maincont">
+            <div id="sidebar"></div>
+            <div class="content">
+                <div class="lend-head">
+                    <h1>Book Inventory</h1>
+                    <a href="./addingbook.html">Add New Book</a>
+                </div>
+                <div class="lend-cont">
+                    <table>
+                        <thead>
+                            <tr>
+                            <th>Book ID</th>
+                            <th>Book Title</th>
+                            <th>Genre</th>
+                            <th>Author</th>
+                            <th>Total Copies Available</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>B001</td>
+                            <td>The Great Gatsby</td>
+                            <td>Classic</td>
+                            <td>F. Scott Fitzgerald</td>
+                            <td>5</td>
+                            </tr>
+                            <tr>
+                            <td>B002</td>
+                            <td>To Kill a Mockingbird</td>
+                            <td>Fiction</td>
+                            <td>Harper Lee</td>
+                            <td>3</td>
+                            </tr>
+                            <tr>
+                            <td>B003</td>
+                            <td>Ponniyin Selvan</td>
+                            <td>Historical</td>
+                            <td>Kalki Krishnamurthy</td>
+                            <td>4</td>
+                            </tr>
+                            <tr>
+                            <td>B004</td>
+                            <td>The Odyssey</td>
+                            <td>Epic</td>
+                            <td>Homer</td>
+                            <td>2</td>
+                            </tr>
+                            <tr>
+                            <td>B005</td>
+                            <td>The Catcher in the Rye</td>
+                            <td>Fiction</td>
+                            <td>J.D. Salinger</td>
+                            <td>6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+  <script>
+    fetch('nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+
+    fetch('sidebar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('sidebar').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lended Books - LMS</title>
+    <link rel="stylesheet" href="./CSS/lendbook.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="maincont">
+        <div id="sidebar"></div>
+        <div class="container">
+            <div class="card">
+            <div class="section-title">User Information</div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Lender Name</label>
+                        <input type="text" />
+                    </div>
+                    <div class="form-group">
+                        <label>Membership ID *</label>
+                        <input type="text" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Contact Number *</label>
+                        <input type="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Book Title</label>
+                        <select><option>Select from list</option></select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Genre/Category</label>
+                        <select><option>Select from list</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Author(s)</label>
+                        <select><option>Select from list</option></select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Lending Date *</label>
+                        <input type="date" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Due Date *</label>
+                        <input type="date" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Copies Lent *</label>
+                        <input type="number" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Lending Status *</label>
+                        <select><option>Select status</option></select>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button class="cancel">Cancel</button>
+                    <button class="submit">Lend a Book</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data=> {
+                document.getElementById('sidebar').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

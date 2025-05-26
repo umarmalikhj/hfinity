@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600&display=swap');
+
+:root {
+    --primary-font: 'Inter', sans-serif;
+    --head-font: 'Poppins', sans-serif;
+    --primary-color: #00b7ff;
+    --accent-color: #00e0ff;
+    --bg-color: #f4f8fb;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+body {
+    height: 100vh;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hfin{
+    font-family: var(--head-font);
+    font-size: 1.1em;
+    color: var(--primary-color);
+}
+
+.logout-container {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.message-box h1 {
+    font-family: var(--primary-font);
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.message-box p {
+    color: var(--text-color);
+    margin-bottom: 1.2em;
+    font-size: 0.95rem;
+}
+
+.login-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--accent-color);
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Library Settings</title>
+  <link rel="stylesheet" href="./CSS/settings.css" />
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="maincont">
+        <div id="sidebar"></div>
+        <div class="container">
+            <main class="main-content">
+                <h1>Settings</h1>
+                <form class="settings-form">
+                    <!-- Lending Limits -->
+                    <section>
+                        <h2>Lending Limits</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Max Books Per User</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label>Max Lending Duration (Days)</label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Notifications -->
+                    <section>
+                        <h2>Notification Settings</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Overdue Reminder (Days Before Due Date)</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label>Notification Frequency</label>
+                                <select>
+                                    <option>Daily</option>
+                                    <option>Weekly</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Communication Mode</label>
+                                <select>
+                                    <option>Email</option>
+                                    <option>SMS</option>
+                                    <option>Email, SMS</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Admin -->
+                    <section>
+                        <h2>Admin Account Management</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Admin Email</label>
+                                <input type="email" />
+                            </div>
+                            <div class="form-group">
+                                <label>Admin Phone Number</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label>Password Policy</label>
+                                <select>
+                                    <option>Email</option>
+                                    <option>SMS</option>
+                                    <option>Email, SMS</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- General Preferences -->
+                    <section>
+                        <h2>General System Preferences</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Library Operating Hours</label>
+                                <input type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label>Theme Settings</label>
+                                <select>
+                                    <option>Light Mode</option>
+                                    <option disabled>Dark Mode (Under Maintaince)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Language Settings</label>
+                                <select>
+                                    <option>English</option>
+                                    <option disabled>Hindi (Under Maintaince)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Buttons -->
+                    <div class="form-actions">
+                        <button type="button">Cancel</button>
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+    <script>
+        fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+
+        fetch('sidebar.html')
+            .then(response => response.text())
+            .then(data=> {
+                document.getElementById('sidebar').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

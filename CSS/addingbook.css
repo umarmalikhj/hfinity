@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-font: "Inter", sans-serif;
+    --head-font: "Poppins", sans-serif;
+    --dark-bg: #0d1117;
+    --primary-dark: #0090cc;
+    --accent-color: #00e0ff;
+    --primary-color: #00b7ff;
+    --bg-white: #f9f9f9;
+    --light-gray: #d9d9d9;
+    --label-color: #444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+.maincont {
+    display: flex;
+    background-color: var(--bg-white);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 95px 20px 20px 280px;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 183, 255, 0.1);
+    border-radius: 10px;
+}
+
+.container h3 {
+    font-size: 2.5em;
+    color: var(--dark-bg);
+    margin-bottom: 0.3em;
+    font-weight: 600;
+    font-family: var(--primary-font);
+}
+
+.container h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5em;
+    font-weight: 500;
+    color: var(--dark-bg);
+    font-family: var(--primary-font);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col {
+    flex: 1 1 calc(35% - 20px);
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: var(--label-color);
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light-gray);
+    border-radius: 6px;
+    background-color: #fff;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(0, 183, 255, 0.3);
+}
+
+.state {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5%;
+}
+
+.form-check {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-check input {
+    margin-right: 5px;
+    accent-color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.01);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .container {
+        margin: 95px 20px 0 20px;
+    }
+
+    .col {
+        flex: 1 1 100%;
+    }
+}
