@@ -30,7 +30,7 @@ Installation & Setup
 
   Host the project on a local server (XAMPP, WAMP, or similar).
 
-  Access via browser at http://localhost/hfinity-lms/.
+  Access via browser at https://hfinity.vercel.app/
 
 Usage:
   Login as admin to access the dashboard.
